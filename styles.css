@@ -1,0 +1,108 @@
+body {
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+    text-align: center;
+    padding: 1em;
+}
+
+.quran-container, .media-player {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 600px;
+}
+.quran-container {
+    max-height: 300px; /* Adjust height as needed */
+    overflow-y: auto;
+}
+.quran-container div {
+    background-color: #ffffff;
+    border-radius: 5px;
+	box-shadow: 0 2px 4px rgb(164 165 165);
+    margin: 10px 0;
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+	color: black;
+}
+.quran-container div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.media-player:hover, .quran-container div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+audio {
+    width: 100%;
+}
+.selected-verse {
+    background-color: #d1e7dd;
+    border: 2px solid #bfffe1;
+}
+
+/* Add a dark mode class */
+.dark-mode {
+    background-color: #222;
+    color: #eee;
+}
+
+.dark-mode .quran-container,
+.dark-mode .media-player {
+    background-color: #333;
+}
+
+.dark-mode .quran-container div {
+    background-color: #444;
+    color: #eee;
+}
+
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 16px;
+  transition: transform 0.3s;
+}
+
+.theme-toggle.dark-mode::before {
+  transform: translateX(20px);
+}
+
+.theme-toggle::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: #333;
+}
+
+.theme-toggle::after {
+  content: "DarkMode"; /* moon icon */
+}
+
+.theme-toggle.dark-mode::after {
+  content: "LightMode"; /* sun icon */
+}
